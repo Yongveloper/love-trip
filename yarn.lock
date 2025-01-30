@@ -765,6 +765,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tsconfig/vite-react@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "@tsconfig/vite-react@npm:3.4.0"
+  checksum: 10c0/9bd1516f1553903a231d3d4fa06c4f6d28998f50b80d16dd54c05ed8440221a5b1c2d521ab60020ead0b5d98f8be8e1285883292f68d4bb5c2bf9771d8aba4b1
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.20.5":
   version: 7.20.5
   resolution: "@types/babel__core@npm:7.20.5"
@@ -2281,6 +2288,7 @@ __metadata:
   resolution: "part3_love_trip@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.17.0"
+    "@tsconfig/vite-react": "npm:^3.4.0"
     "@types/react": "npm:^18.3.18"
     "@types/react-dom": "npm:^18.3.5"
     "@vitejs/plugin-react": "npm:^4.3.4"
