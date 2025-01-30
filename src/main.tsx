@@ -4,7 +4,6 @@ import { createRoot } from 'react-dom/client';
 import { Global } from '@emotion/react';
 
 import App from './App.tsx';
-import './index.css';
 import globalStyles from './styles/globalStyles';
 
 createRoot(document.getElementById('root')!).render(
