@@ -2,7 +2,7 @@
 
 ## 사용 기술 🛠️
 
-Vite, Yarn Berry, React, Typescript, Emotion
+Vite, Yarn Berry, React, Typescript, Emotion, react-query
 
 ## 최적화 포인트 💡
 
