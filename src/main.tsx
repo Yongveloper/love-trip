@@ -1,26 +1,15 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { css } from '@emotion/react';
-import styled from '@emotion/styled';
+import { Global } from '@emotion/react';
 
 import App from './App.tsx';
 import './index.css';
-
-const Container = styled.div`
-	color: pink;
-`;
+import globalStyles from './styles/globalStyles';
 
 createRoot(document.getElementById('root')!).render(
 	<StrictMode>
+		<Global styles={globalStyles} />
 		<App />
-		<Container>Hello</Container>
-		<h2
-			css={css`
-				color: pink;
-			`}
-		>
-			React
-		</h2>
 	</StrictMode>,
 );
