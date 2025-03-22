@@ -3498,7 +3498,7 @@ __metadata:
     react-infinite-scroll-component: "npm:^6.1.0"
     react-query: "npm:^3.39.3"
     react-router-dom: "npm:^7.1.3"
-    swiper: "npm:^11.2.6"
+    swiper: "npm:^10.3.1"
     typescript: "npm:~5.6.2"
     typescript-eslint: "npm:^8.18.2"
     vite: "npm:^6.0.5"
@@ -4119,10 +4119,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swiper@npm:^11.2.6":
-  version: 11.2.6
-  resolution: "swiper@npm:11.2.6"
-  checksum: 10c0/36ba63e2d1c5045f647f0f07b3a25c164393fb89b17db63f57fa9f776eb61bc5cb2c34634f80cf69caaddc209a174d0cd7be23c580785534569ea4a098b3a42c
+"swiper@npm:^10.3.1":
+  version: 10.3.1
+  resolution: "swiper@npm:10.3.1"
+  checksum: 10c0/1e9ad5480cbf451d99fab280553d5105eb314f381d98610771f0808cac03962d87967a190696686d62bce8e4ebcbf34962c369f9d502b34fef1582ced17f6f98
   languageName: node
   linkType: hard
 

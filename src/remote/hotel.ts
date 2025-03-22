@@ -1,6 +1,8 @@
 import {
 	QuerySnapshot,
 	collection,
+	doc,
+	getDoc,
 	getDocs,
 	limit,
 	query,
@@ -38,4 +40,13 @@ export async function getHotels(pageParams?: QuerySnapshot<IHotel>) {
 		items,
 		lastVisible,
 	};
+}
+
+export async function getHotel(id: string) {
+	const snapshot = await getDoc(doc(store, COLLECTIONS.HOTEL, id));
+
+	return {
+		id,
+		...snapshot.data(),
+	} as IHotel;
 }

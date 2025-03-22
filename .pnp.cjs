@@ -49,7 +49,7 @@ const RAW_RUNTIME_STATE =
           ["react-infinite-scroll-component", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:6.1.0"],\
           ["react-query", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:3.39.3"],\
           ["react-router-dom", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:7.1.3"],\
-          ["swiper", "npm:11.2.6"],\
+          ["swiper", "npm:10.3.1"],\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
           ["typescript-eslint", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:8.22.0"],\
           ["vite", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:6.0.11"],\
@@ -4711,7 +4711,7 @@ const RAW_RUNTIME_STATE =
           ["react-infinite-scroll-component", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:6.1.0"],\
           ["react-query", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:3.39.3"],\
           ["react-router-dom", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:7.1.3"],\
-          ["swiper", "npm:11.2.6"],\
+          ["swiper", "npm:10.3.1"],\
           ["typescript", "patch:typescript@npm%3A5.6.3#optional!builtin<compat/typescript>::version=5.6.3&hash=8c6c40"],\
           ["typescript-eslint", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:8.22.0"],\
           ["vite", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:6.0.11"],\
@@ -5410,10 +5410,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["swiper", [\
-      ["npm:11.2.6", {\
-        "packageLocation": "./.yarn/cache/swiper-npm-11.2.6-856f73dc16-36ba63e2d1.zip/node_modules/swiper/",\
+      ["npm:10.3.1", {\
+        "packageLocation": "./.yarn/cache/swiper-npm-10.3.1-76fd5fe27f-1e9ad5480c.zip/node_modules/swiper/",\
         "packageDependencies": [\
-          ["swiper", "npm:11.2.6"]\
+          ["swiper", "npm:10.3.1"]\
         ],\
         "linkType": "HARD"\
       }]\
