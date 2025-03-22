@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 
 import Carousel from '~/components/hotel/Carousel';
 import Contents from '~/components/hotel/Contents';
+import Rooms from '~/components/hotel/Rooms';
 import { useHotel } from '~/components/hotel/hooks/useHotel';
 import Top from '~/components/shared/Top';
 
@@ -20,6 +21,7 @@ function HotelPage() {
 		<div>
 			<Top title={name} subtitle={comment} />
 			<Carousel images={images} />
+			<Rooms hotelId={id} />
 			<Contents contents={contents} />
 		</div>
 	);
