@@ -1,4 +1,4 @@
-import { Toaster, toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
 import { css } from '@emotion/react';
 
@@ -35,28 +35,25 @@ function ActionButtons({ hotel }: { hotel: IHotel }) {
 	};
 
 	return (
-		<>
-			<Flex css={containerStyles}>
-				<Button
-					label="찜하기"
-					onClick={() => {
-						//TODO
-					}}
-					iconUrl="https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-64.png"
-				/>
-				<Button
-					label="공유하기"
-					onClick={handleShare}
-					iconUrl="https://cdn1.iconfinder.com/data/icons/rounded-social-media/512/kakao-64.png"
-				/>
-				<Button
-					label="링크복사"
-					onClick={handleCopy}
-					iconUrl="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/paste-clipboard-copy-512.png"
-				/>
-			</Flex>
-			<Toaster position="top-center" reverseOrder={false} />
-		</>
+		<Flex css={containerStyles}>
+			<Button
+				label="찜하기"
+				onClick={() => {
+					//TODO
+				}}
+				iconUrl="https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-64.png"
+			/>
+			<Button
+				label="공유하기"
+				onClick={handleShare}
+				iconUrl="https://cdn1.iconfinder.com/data/icons/rounded-social-media/512/kakao-64.png"
+			/>
+			<Button
+				label="링크복사"
+				onClick={handleCopy}
+				iconUrl="https://cdn4.iconfinder.com/data/icons/basic-user-interface-elements/700/paste-clipboard-copy-512.png"
+			/>
+		</Flex>
 	);
 }
 
