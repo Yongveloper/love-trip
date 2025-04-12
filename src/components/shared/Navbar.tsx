@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { css } from '@emotion/react';
 
+import { useUser } from '~/hooks/auth/useUser';
 import { colors } from '~/styles/colorPalette';
 
 import Button from './Button';
@@ -12,15 +13,22 @@ function Navbar() {
 	const location = useLocation();
 	const showSignButton = !['/signup', '/signin'].includes(location.pathname);
 
-	// @TODO
-	const user = null;
+	const user = useUser();
 
 	const renderButton = useCallback(() => {
 		if (user) {
 			return (
 				<Link to="/my">
-					{/* @TODO */}
-					<img src="" alt="" />
+					<img
+						src={
+							user.photoURL ??
+							'https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_user2-1024.png'
+						}
+						alt="유저 프로필 이미지"
+						width={40}
+						height={40}
+						style={{ borderRadius: '100%' }}
+					/>
 				</Link>
 			);
 		}
@@ -38,7 +46,7 @@ function Navbar() {
 
 	return (
 		<Flex justify="space-between" align="center" css={navbarContainerStyles}>
-			<Link to="/">홈</Link>
+			<Link to="/">Love Trip</Link>
 			{renderButton()}
 		</Flex>
 	);

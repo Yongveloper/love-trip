@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { FirebaseError } from 'firebase/app';
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
-import { collection, doc, setDoc } from 'firebase/firestore';
+import { collection, doc, getDoc, setDoc } from 'firebase/firestore';
 
 import { COLLECTIONS } from '~/constants';
 import { auth, store } from '~/remote/firebase';
@@ -17,6 +17,16 @@ export const useGoogleSignin = () => {
 
 		try {
 			const { user } = await signInWithPopup(auth, provider);
+
+			const userSnapshot = await getDoc(
+				doc(collection(store, COLLECTIONS.USER), user.uid),
+			);
+
+			// 이미 가입한 유저
+			if (userSnapshot.exists()) {
+				navigate('/');
+				return;
+			}
 
 			const newUser = {
 				uid: user.uid,

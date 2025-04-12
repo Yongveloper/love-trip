@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import AuthGuard from './components/auth/AuthGuard';
+import Navbar from './components/shared/Navbar';
 import { useLoadKakao } from './hooks/useLoadKakao';
 import HotelPage from './pages/Hotel';
 import HotelListPage from './pages/HotelList';
@@ -12,13 +14,16 @@ function App() {
 
 	return (
 		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<HotelListPage />} />
-				<Route path="/hotel/:id" element={<HotelPage />} />
-				<Route path="/signin" element={<SigninPage />} />
-				<Route path="/my" element={<MyPage />} />
-				<Route path="/test" element={<TestPage />} />
-			</Routes>
+			<AuthGuard>
+				<Navbar />
+				<Routes>
+					<Route path="/" element={<HotelListPage />} />
+					<Route path="/hotel/:id" element={<HotelPage />} />
+					<Route path="/signin" element={<SigninPage />} />
+					<Route path="/my" element={<MyPage />} />
+					<Route path="/test" element={<TestPage />} />
+				</Routes>
+			</AuthGuard>
 		</BrowserRouter>
 	);
 }
