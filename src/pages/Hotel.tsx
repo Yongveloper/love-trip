@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 
+import ActionButtons from '~/components/hotel/ActionButtons';
 import Carousel from '~/components/hotel/Carousel';
 import Contents from '~/components/hotel/Contents';
 import Map from '~/components/hotel/Map';
@@ -23,6 +24,7 @@ function HotelPage() {
 		<div>
 			<Top title={name} subtitle={comment} />
 			<Carousel images={images} />
+			<ActionButtons hotel={data} />
 			<Rooms hotelId={id} />
 			<Contents contents={contents} />
 			<Map location={location} />
