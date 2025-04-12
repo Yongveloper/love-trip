@@ -2,6 +2,7 @@ import { toast } from 'react-hot-toast';
 
 import { css } from '@emotion/react';
 
+import { useLike } from '~/hooks/like/useLike';
 import useClipboard from '~/hooks/useClipboard';
 import { useShare } from '~/hooks/useShare';
 import { IHotel } from '~/models/hotel';
@@ -13,6 +14,9 @@ import Text from '../shared/Text';
 function ActionButtons({ hotel }: { hotel: IHotel }) {
 	const share = useShare();
 	const { copyToClipboard } = useClipboard();
+	const { data: likes, mutate: like } = useLike();
+
+	const isLike = Boolean(likes?.find((like) => like.hotelId === hotel.id));
 
 	const { name, comment, mainImageUrl } = hotel;
 
@@ -39,9 +43,19 @@ function ActionButtons({ hotel }: { hotel: IHotel }) {
 			<Button
 				label="찜하기"
 				onClick={() => {
-					//TODO
+					like({
+						hotel: {
+							name,
+							id: hotel.id,
+							mainImageUrl,
+						},
+					});
 				}}
-				iconUrl="https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-64.png"
+				iconUrl={
+					isLike
+						? 'https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-64.png'
+						: 'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-heart-outline-64.png'
+				}
 			/>
 			<Button
 				label="공유하기"

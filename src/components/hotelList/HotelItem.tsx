@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { MouseEvent, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { css } from '@emotion/react';
@@ -14,7 +14,19 @@ import Spacing from '../shared/Spacing';
 import Tag from '../shared/Tag';
 import Text from '../shared/Text';
 
-function HotelItem({ hotel }: { hotel: IHotel }) {
+function HotelItem({
+	hotel,
+	isLike,
+	onLike,
+}: {
+	hotel: IHotel;
+	isLike: boolean;
+	onLike: ({
+		hotel,
+	}: {
+		hotel: Pick<IHotel, 'name' | 'id' | 'mainImageUrl'>;
+	}) => void;
+}) {
 	const [remainedTIme, setRemainedTime] = useState(0);
 
 	useEffect(() => {
@@ -66,6 +78,17 @@ function HotelItem({ hotel }: { hotel: IHotel }) {
 		);
 	};
 
+	const handleLike = (e: MouseEvent<HTMLImageElement>) => {
+		e.preventDefault();
+		onLike({
+			hotel: {
+				name: hotel.name,
+				id: hotel.id,
+				mainImageUrl: hotel.mainImageUrl,
+			},
+		});
+	};
+
 	return (
 		<div>
 			<Link to={`/hotel/${hotel.id}`}>
@@ -81,7 +104,21 @@ function HotelItem({ hotel }: { hotel: IHotel }) {
 						</Flex>
 					}
 					right={
-						<Flex direction="column" align="flex-end">
+						<Flex
+							direction="column"
+							align="flex-end"
+							style={{ position: 'relative' }}
+						>
+							<img
+								src={
+									isLike
+										? 'https://cdn4.iconfinder.com/data/icons/twitter-29/512/166_Heart_Love_Like_Twitter-64.png'
+										: 'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-heart-outline-64.png'
+								}
+								alt="좋아요"
+								css={iconHeartStyles}
+								onClick={handleLike}
+							/>
 							<img src={hotel.mainImageUrl} alt="" css={imageStyles} />
 							<Spacing size={8} />
 							<Text bold={true}>{addDelimiter(hotel.price)}</Text>
@@ -104,6 +141,14 @@ const imageStyles = css`
 	border-radius: 8px;
 	object-fit: cover;
 	margin-left: 16px;
+`;
+
+const iconHeartStyles = css`
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	width: 30px;
+	height: 30px;
 `;
 
 export default HotelItem;
