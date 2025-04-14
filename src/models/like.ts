@@ -4,7 +4,7 @@ export interface ILike {
 	id: string;
 	hotelId: string;
 	hotelName: string;
-	hotelMainImageUrl: string;
+	hotelImageUrl: string;
 	userId: string;
 	order: number;
 }

@@ -8,6 +8,7 @@ import { colors } from '~/styles/colorPalette';
 
 import Button from './Button';
 import Flex from './Flex';
+import Spacing from './Spacing';
 
 function Navbar() {
 	const location = useLocation();
@@ -18,18 +19,32 @@ function Navbar() {
 	const renderButton = useCallback(() => {
 		if (user) {
 			return (
-				<Link to="/my">
-					<img
-						src={
-							user.photoURL ??
-							'https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_user2-1024.png'
-						}
-						alt="유저 프로필 이미지"
-						width={40}
-						height={40}
-						style={{ borderRadius: '100%' }}
-					/>
-				</Link>
+				<Flex align="center">
+					<Link to="/my">
+						<img
+							src={
+								user.photoURL ??
+								'https://cdn4.iconfinder.com/data/icons/glyphs/24/icons_user2-1024.png'
+							}
+							alt="유저 프로필 이미지"
+							width={40}
+							height={40}
+							style={{ borderRadius: '100%' }}
+							onError={console.error}
+						/>
+					</Link>
+					<Spacing size={4} direction="horizontal" />
+					<Link to="/settings">
+						<img
+							src="https://cdn1.iconfinder.com/data/icons/ionicons-outline-vol-2/512/settings-outline-512.png"
+							alt="유저 프로필 이미지"
+							width={40}
+							height={40}
+							style={{ borderRadius: '100%' }}
+							onError={(e) => console.error(e)}
+						/>
+					</Link>
+				</Flex>
 			);
 		}
 
