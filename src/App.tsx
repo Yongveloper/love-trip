@@ -7,6 +7,8 @@ import { useLoadKakao } from './hooks/useLoadKakao';
 import HotelPage from './pages/Hotel';
 import HotelListPage from './pages/HotelList';
 import MyPage from './pages/My';
+import ReservationPage from './pages/Reservation';
+import SchedulePage from './pages/Schedule';
 import SigninPage from './pages/Signin';
 import TestPage from './pages/Test';
 import SettingsPage from './pages/settings';
@@ -44,6 +46,22 @@ function App() {
 						element={
 							<PrivateRoute>
 								<LikePage />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/schedule"
+						element={
+							<PrivateRoute>
+								<SchedulePage />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/reservation"
+						element={
+							<PrivateRoute>
+								<ReservationPage />
 							</PrivateRoute>
 						}
 					/>
