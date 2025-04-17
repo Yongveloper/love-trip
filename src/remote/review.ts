@@ -1,10 +1,12 @@
 import {
 	collection,
+	deleteDoc,
 	doc,
 	getDoc,
 	getDocs,
 	orderBy,
 	query,
+	setDoc,
 } from 'firebase/firestore';
 
 import { COLLECTIONS } from '~/constants';
@@ -62,4 +64,24 @@ export const getReviews = async ({ hotelId }: { hotelId: string }) => {
 	}
 
 	return results;
+};
+
+export const writeReview = async (review: Omit<IReview, 'id'>) => {
+	const hotelRef = doc(store, COLLECTIONS.HOTEL, review.hotelId);
+	const reviewRef = doc(collection(hotelRef, COLLECTIONS.REVIEW));
+
+	return await setDoc(reviewRef, review);
+};
+
+export const removeReview = async ({
+	reviewId,
+	hotelId,
+}: {
+	reviewId: string;
+	hotelId: string;
+}) => {
+	const hotelRef = doc(store, COLLECTIONS.HOTEL, hotelId);
+	const reviewRef = doc(collection(hotelRef, COLLECTIONS.REVIEW), reviewId);
+
+	return await deleteDoc(reviewRef);
 };

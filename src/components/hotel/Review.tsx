@@ -1,4 +1,5 @@
-import { useCallback } from 'react';
+import { ChangeEvent, FormEvent, useCallback, useState } from 'react';
+import toast from 'react-hot-toast';
 
 import { format } from 'date-fns';
 
@@ -13,8 +14,10 @@ import TextField from '../shared/TextField';
 import { useReview } from './hooks/useReview';
 
 function Review({ hotelId }: { hotelId: string }) {
-	const { data: reviews, isLoading } = useReview({ hotelId });
+	const { data: reviews, isLoading, write, remove } = useReview({ hotelId });
 	const user = useUser();
+
+	const [text, setText] = useState('');
 
 	const reviewRows = useCallback(() => {
 		if (reviews?.length === 0) {
@@ -38,6 +41,7 @@ function Review({ hotelId }: { hotelId: string }) {
 			<ul>
 				{reviews?.map((review) => (
 					<ListRow
+						key={review.id}
 						left={
 							review.user.photoURL && (
 								<img
@@ -51,15 +55,50 @@ function Review({ hotelId }: { hotelId: string }) {
 						contents={
 							<ListRow.Texts
 								title={review.text}
-								subTitle={format(review.createdAt, 'yyyy-mm-dd')}
+								subTitle={format(review.createdAt, 'yyyy-MM-dd')}
 							/>
 						}
-						right={review.userId === user?.uid && <Button>삭제</Button>}
+						right={
+							review.userId === user?.uid && (
+								<Button
+									onClick={async () => {
+										const success = await remove({
+											reviewId: review.id,
+											hotelId: hotelId,
+										});
+
+										if (success) {
+											toast.success('리뷰가 삭제되었어요.');
+										}
+									}}
+								>
+									삭제
+								</Button>
+							)
+						}
 					/>
 				))}
 			</ul>
 		);
-	}, [reviews, user]);
+	}, [reviews, user, hotelId, remove]);
+
+	const handleTextChange = useCallback((e: ChangeEvent<HTMLInputElement>) => {
+		setText(e.target.value);
+	}, []);
+
+	const handleSubmit = useCallback(
+		async (e: FormEvent<HTMLFormElement>) => {
+			e.preventDefault();
+
+			const success = await write(text);
+
+			if (success) {
+				setText('');
+				toast.success('리뷰가 작성되었어요 🎉');
+			}
+		},
+		[text, write],
+	);
 
 	if (isLoading) {
 		return null;
@@ -73,13 +112,15 @@ function Review({ hotelId }: { hotelId: string }) {
 			<Spacing size={16} />
 			{reviewRows()}
 			{user && (
-				<div style={{ padding: '0 24px' }}>
-					<TextField />
+				<form style={{ padding: '0 24px' }} onSubmit={handleSubmit}>
+					<TextField value={text} onChange={handleTextChange} />
 					<Spacing size={6} />
 					<Flex justify="flex-end">
-						<Button disabled={true}>작성</Button>
+						<Button type="submit" disabled={text === ''}>
+							작성
+						</Button>
 					</Flex>
-				</div>
+				</form>
 			)}
 		</div>
 	);
