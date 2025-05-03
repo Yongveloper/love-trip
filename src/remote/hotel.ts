@@ -13,6 +13,7 @@ import {
 
 import { COLLECTIONS } from '~/constants';
 import { IHotel } from '~/models/hotel';
+import { IRoom } from '~/models/room';
 
 import { store } from './firebase';
 
@@ -68,4 +69,22 @@ export async function getRecommendHotels(hotelIds: string[]) {
 				...doc.data(),
 			}) as IHotel,
 	);
+}
+
+export async function getHotelWithRoom({
+	hotelId,
+	roomId,
+}: {
+	hotelId: string;
+	roomId: string;
+}) {
+	const hotelSnapshot = await getDoc(doc(store, COLLECTIONS.HOTEL, hotelId));
+	const roomSnapshot = await getDoc(
+		doc(hotelSnapshot.ref, COLLECTIONS.ROOM, roomId),
+	);
+
+	return {
+		hotel: hotelSnapshot.data() as IHotel,
+		room: roomSnapshot.data() as IRoom,
+	};
 }

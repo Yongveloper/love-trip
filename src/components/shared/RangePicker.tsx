@@ -38,6 +38,7 @@ function RangePicker({ startDate, endDate, onChange }: IRangePickerProps) {
 			<DayPicker
 				mode="range"
 				numberOfMonths={5}
+				disabled={{ before: today }}
 				locale={ko}
 				defaultMonth={today}
 				onSelect={handleDayClick}
@@ -90,6 +91,10 @@ const Container = styled.div`
 		position: relative;
 		width: 100%;
 		line-height: 45px;
+	}
+
+	.rdp-day_button:disabled {
+		color: ${colors.gray200};
 	}
 
 	.rdp-selected {
