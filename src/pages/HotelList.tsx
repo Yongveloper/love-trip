@@ -11,8 +11,6 @@ function HotelList() {
 	const { data: hotels, hasNextPage, loadMore } = useHotels();
 	const { data: likes, mutate: like } = useLike();
 
-	console.log('likes', likes);
-
 	return (
 		<div>
 			<Top title="인기 호텔" subtitle="호텔부터 펜션까지 최저가" />
