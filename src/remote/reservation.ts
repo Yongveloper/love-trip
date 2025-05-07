@@ -1,10 +1,20 @@
-import { addDoc, collection, doc, getDoc, updateDoc } from 'firebase/firestore';
+import {
+	collection,
+	doc,
+	getDoc,
+	getDocs,
+	query,
+	setDoc,
+	updateDoc,
+	where,
+} from 'firebase/firestore';
 
 import { COLLECTIONS } from '~/constants';
 import { IReservation } from '~/models/reservation';
 import { IRoom } from '~/models/room';
 
 import { store } from './firebase';
+import { getHotel } from './hotel';
 
 export async function makeReservation(newReservation: IReservation) {
 	const hotelSnapshot = doc(store, COLLECTIONS.HOTEL, newReservation.hotelId);
@@ -23,6 +33,33 @@ export async function makeReservation(newReservation: IReservation) {
 		updateDoc(roomSnapshot.ref, {
 			avaliableCount: 지금잔여객실수 - 1,
 		}),
-		addDoc(collection(store, COLLECTIONS.RESERVATION), newReservation),
+		setDoc(doc(collection(store, COLLECTIONS.RESERVATION)), newReservation),
 	]);
+}
+
+export async function getReservations({ userId }: { userId: string }) {
+	const reservationQuery = query(
+		collection(store, COLLECTIONS.RESERVATION),
+		where('userId', '==', userId),
+	);
+
+	const reservationSnapshot = await getDocs(reservationQuery);
+
+	const result = [];
+
+	for (const reservationDoc of reservationSnapshot.docs) {
+		const reservation = {
+			id: reservationDoc.id,
+			...(reservationDoc.data() as IReservation),
+		};
+
+		const hotel = await getHotel(reservation.hotelId);
+
+		result.push({
+			reservation,
+			hotel,
+		});
+	}
+
+	return result;
 }

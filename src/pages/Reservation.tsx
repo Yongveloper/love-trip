@@ -13,6 +13,7 @@ import { addDelimiter } from '~/utils/addDelimiter';
 function ReservationPage() {
 	const navigate = useNavigate();
 	const user = useUser();
+
 	const { startDate, endDate, nights, roomId, hotelId } = parse(
 		window.location.search,
 		{ ignoreQueryPrefix: true },
@@ -32,7 +33,7 @@ function ReservationPage() {
 		) {
 			window.history.back();
 		}
-	}, [startDate, endDate, nights, roomId, hotelId, user]);
+	}, []);
 
 	const { data, isLoading, makeReservation } = useReservation({
 		hotelId,
@@ -46,6 +47,7 @@ function ReservationPage() {
 	const { hotel, room } = data;
 
 	const handleSubmit = async (formValues: { [key: string]: string }) => {
+		console.log('formValues', formValues);
 		const newReservation = {
 			userId: user?.uid as string,
 			hotelId,

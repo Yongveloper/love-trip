@@ -47,6 +47,7 @@ const RAW_RUNTIME_STATE =
           ["firebase", "npm:11.2.0"],\
           ["globals", "npm:15.14.0"],\
           ["jotai", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:2.12.2"],\
+          ["lottie-react", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:2.4.1"],\
           ["prettier", "npm:3.4.2"],\
           ["qs", "npm:6.14.0"],\
           ["react", "npm:18.3.1"],\
@@ -4958,6 +4959,42 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["lottie-react", [\
+      ["npm:2.4.1", {\
+        "packageLocation": "./.yarn/cache/lottie-react-npm-2.4.1-91badf61e2-7f6a0a2cf2.zip/node_modules/lottie-react/",\
+        "packageDependencies": [\
+          ["lottie-react", "npm:2.4.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:2.4.1", {\
+        "packageLocation": "./.yarn/__virtual__/lottie-react-virtual-744b2e1f94/0/cache/lottie-react-npm-2.4.1-91badf61e2-7f6a0a2cf2.zip/node_modules/lottie-react/",\
+        "packageDependencies": [\
+          ["lottie-react", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:2.4.1"],\
+          ["@types/react", "npm:18.3.18"],\
+          ["@types/react-dom", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:18.3.5"],\
+          ["lottie-web", "npm:5.12.2"],\
+          ["react", "npm:18.3.1"],\
+          ["react-dom", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:18.3.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["lottie-web", [\
+      ["npm:5.12.2", {\
+        "packageLocation": "./.yarn/cache/lottie-web-npm-5.12.2-942dc9e22a-0aeaf631b1.zip/node_modules/lottie-web/",\
+        "packageDependencies": [\
+          ["lottie-web", "npm:5.12.2"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["lru-cache", [\
       ["npm:10.4.3", {\
         "packageLocation": "./.yarn/cache/lru-cache-npm-10.4.3-30c10b861a-ebd04fbca9.zip/node_modules/lru-cache/",\
@@ -5771,6 +5808,7 @@ const RAW_RUNTIME_STATE =
           ["firebase", "npm:11.2.0"],\
           ["globals", "npm:15.14.0"],\
           ["jotai", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:2.12.2"],\
+          ["lottie-react", "virtual:150264159473de5ad3d609c3d588131dba04597fc50d2bdbfb116498641e1e6ef86fea22e55cfcdd57a3c11c269416a4e51b17e65777452f1b56eb2f4e5c79b6#npm:2.4.1"],\
           ["prettier", "npm:3.4.2"],\
           ["qs", "npm:6.14.0"],\
           ["react", "npm:18.3.1"],\

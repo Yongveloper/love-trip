@@ -8,6 +8,8 @@ import HotelPage from './pages/Hotel';
 import HotelListPage from './pages/HotelList';
 import MyPage from './pages/My';
 import ReservationPage from './pages/Reservation';
+import ReservationDonePage from './pages/ReservationDone';
+import ReservationListPage from './pages/ReservationList';
 import SchedulePage from './pages/Schedule';
 import SigninPage from './pages/Signin';
 import TestPage from './pages/Test';
@@ -62,6 +64,22 @@ function App() {
 						element={
 							<PrivateRoute>
 								<ReservationPage />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/reservation/done"
+						element={
+							<PrivateRoute>
+								<ReservationDonePage />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/reservation/list"
+						element={
+							<PrivateRoute>
+								<ReservationListPage />
 							</PrivateRoute>
 						}
 					/>
