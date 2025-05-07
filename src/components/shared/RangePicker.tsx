@@ -2,7 +2,7 @@ import { DateRange, DayPicker } from 'react-day-picker';
 import { ko } from 'react-day-picker/locale';
 
 import styled from '@emotion/styled';
-import { differenceInDays, format, parseISO } from 'date-fns';
+import { addDays, differenceInDays, format, parseISO } from 'date-fns';
 
 import { colors } from '~/styles/colorPalette';
 
@@ -38,7 +38,7 @@ function RangePicker({ startDate, endDate, onChange }: IRangePickerProps) {
 			<DayPicker
 				mode="range"
 				numberOfMonths={5}
-				disabled={{ before: today }}
+				disabled={{ before: addDays(today, 1) }}
 				locale={ko}
 				defaultMonth={today}
 				onSelect={handleDayClick}
