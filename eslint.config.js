@@ -1,10 +1,13 @@
 import js from '@eslint/js';
-import globals from 'globals';
+// 추가
+import eslintConfigPrettier from 'eslint-config-prettier';
+import prettier from 'eslint-plugin-prettier';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
+import globals from 'globals';
 import tseslint from 'typescript-eslint';
-import prettier from 'eslint-plugin-prettier'; // 추가
-import eslintConfigPrettier from 'eslint-config-prettier'; // 추가
+
+// 추가
 
 export default tseslint.config(
 	{
@@ -34,6 +37,7 @@ export default tseslint.config(
 				{ allowConstantExport: true },
 			],
 			'prettier/prettier': 'error', // 추가
+			'react-refresh/only-export-components': 'off',
 		},
 	},
 );

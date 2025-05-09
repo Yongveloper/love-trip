@@ -5,6 +5,7 @@ import HotelItem from '~/components/hotelList/HotelItem';
 import { useHotels } from '~/components/hotelList/hooks/useHotels';
 import Spacing from '~/components/shared/Spacing';
 import Top from '~/components/shared/Top';
+import withSuspense from '~/components/shared/hocs/withSuspense';
 import { useLike } from '~/hooks/like/useLike';
 
 function HotelList() {
@@ -47,4 +48,6 @@ function HotelList() {
 	);
 }
 
-export default HotelList;
+export default withSuspense(HotelList, {
+	fallback: <div>호텔리스트 불러오는중...</div>,
+});

@@ -14,6 +14,7 @@ import ListRow from '../shared/ListRow';
 import Spacing from '../shared/Spacing';
 import Tag from '../shared/Tag';
 import Text from '../shared/Text';
+import withSuspense from '../shared/hocs/withSuspense';
 import useRooms from './hooks/useRooms';
 
 function Rooms({ hotelId }: { hotelId: string }) {
@@ -116,4 +117,6 @@ const imageStyles = css`
 	border-radius: 4px;
 `;
 
-export default Rooms;
+export default withSuspense(Rooms, {
+	fallback: <div>객실정보 불러오는중...</div>,
+});

@@ -29,7 +29,9 @@ function useRooms({ hotelId }: { hotelId: string }) {
 		};
 	}, [hotelId, queryClient]);
 
-	return useQuery(['rooms', hotelId], () => getRoom(hotelId));
+	return useQuery(['rooms', hotelId], () => getRoom(hotelId), {
+		suspense: true,
+	});
 }
 
 export default useRooms;
