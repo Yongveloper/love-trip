@@ -10,6 +10,7 @@ import RecommendHotels from '~/components/hotel/RecommendHotels';
 import Review from '~/components/hotel/Review';
 import Rooms from '~/components/hotel/Rooms';
 import { useHotel } from '~/components/hotel/hooks/useHotel';
+import SEO from '~/components/shared/SEO';
 import ScrollProgressBar from '~/components/shared/ScrollProgressBar';
 import Top from '~/components/shared/Top';
 
@@ -26,6 +27,7 @@ function HotelPage() {
 
 	return (
 		<div>
+			<SEO title={name} description={comment} image={images[0]} />
 			<ScrollProgressBar style={scrollProgressBarStyles} />
 			<Top title={name} subtitle={comment} />
 			<Carousel images={images} />

@@ -3317,7 +3317,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"invariant@npm:2.2.4":
+"invariant@npm:2.2.4, invariant@npm:^2.2.4":
   version: 2.2.4
   resolution: "invariant@npm:2.2.4"
   dependencies:
@@ -4403,6 +4403,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-day-picker: "npm:^9.6.7"
     react-dom: "npm:^18.3.1"
+    react-helmet-async: "npm:^2.0.5"
     react-hook-form: "npm:^7.56.1"
     react-hot-toast: "npm:^2.5.2"
     react-infinite-scroll-component: "npm:^6.1.0"
@@ -4612,6 +4613,26 @@ __metadata:
   peerDependencies:
     react: ^18.3.1
   checksum: 10c0/a752496c1941f958f2e8ac56239172296fcddce1365ce45222d04a1947e0cc5547df3e8447f855a81d6d39f008d7c32eab43db3712077f09e3f67c4874973e85
+  languageName: node
+  linkType: hard
+
+"react-fast-compare@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "react-fast-compare@npm:3.2.2"
+  checksum: 10c0/0bbd2f3eb41ab2ff7380daaa55105db698d965c396df73e6874831dbafec8c4b5b08ba36ff09df01526caa3c61595247e3269558c284e37646241cba2b90a367
+  languageName: node
+  linkType: hard
+
+"react-helmet-async@npm:^2.0.5":
+  version: 2.0.5
+  resolution: "react-helmet-async@npm:2.0.5"
+  dependencies:
+    invariant: "npm:^2.2.4"
+    react-fast-compare: "npm:^3.2.2"
+    shallowequal: "npm:^1.1.0"
+  peerDependencies:
+    react: ^16.6.0 || ^17.0.0 || ^18.0.0
+  checksum: 10c0/f390ea8bf13c2681850e5f8eb5b73d8613f407c245a5fd23e9db9b2cc14a3700dd1ce992d3966632886d1d613083294c2aeee009193f49dfa7d145d9f13ea2b0
   languageName: node
   linkType: hard
 
@@ -5018,6 +5039,13 @@ __metadata:
   version: 2.7.1
   resolution: "set-cookie-parser@npm:2.7.1"
   checksum: 10c0/060c198c4c92547ac15988256f445eae523f57f2ceefeccf52d30d75dedf6bff22b9c26f756bd44e8e560d44ff4ab2130b178bd2e52ef5571bf7be3bd7632d9a
+  languageName: node
+  linkType: hard
+
+"shallowequal@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "shallowequal@npm:1.1.0"
+  checksum: 10c0/b926efb51cd0f47aa9bc061add788a4a650550bbe50647962113a4579b60af2abe7b62f9b02314acc6f97151d4cf87033a2b15fc20852fae306d1a095215396c
   languageName: node
   linkType: hard
 
