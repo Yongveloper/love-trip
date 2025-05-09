@@ -30,7 +30,7 @@ function generateMocks() {
 }
 
 function LikePage() {
-	const { data, isEdit, reorder, save } = useEditLike();
+	const { isEdit, reorder, save } = useEditLike();
 
 	const handleDragEndDrop = (result: DropResult) => {
 		if (!result.destination) {
