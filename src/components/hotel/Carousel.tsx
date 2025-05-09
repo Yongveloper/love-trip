@@ -12,6 +12,7 @@ function Carousel({ images }: { images: string[] }) {
 							src={imageUrl}
 							alt={`${index} + 1번째 호텔의 이미지}`}
 							css={imageStyles}
+							loading="lazy"
 						/>
 					</SwiperSlide>
 				))}
